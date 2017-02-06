@@ -51,3 +51,14 @@ Make Changes in Read-Only State
 -------------------------------
 
 > mount -o remount,rw /<br />
+
+<br />
+User Data on USB-Stick
+----------------------
+
+**TODO: ** use a filesystem better suited for unexpected power fail<br />
+* append to **/etc/fstab**<br />
+```
+/dev/sda1       /mnt            vfat    rw,defaults,nofail      0 2
+```
+
