@@ -19,6 +19,7 @@ touch /tmp/dhcpcd.resolv.conf
 ln -s /tmp/dhcpcd.resolv.conf /etc/resolv.conf
 ln -s /tmp /var/lock
 ln -s /tmp /var/run
+rm -f /var/lib/systemd/random-seed
 ln -s /tmp/random-seed /var/lib/systemd/random-seed
 ```
 <br />
