@@ -25,16 +25,20 @@ ln -s /tmp/random-seed /var/lib/systemd/random-seed
 <br />
 * **edit /etc/fstab** <br />
    * add **ro** to entries "/boot" and "/" 
+   * replace the last digit in line "/boot" and "/" with **0**
    * append **tmpfs** entries for "/var/log", "/var/tmp" and "/tmp"
 
 ```
 proc            /proc           proc    defaults              0 0
-/dev/mmcblk0p1  /boot           vfat    ro,defaults           0 2
-/dev/mmcblk0p2  /               ext4    ro,defaults,noatime   0 1
+/dev/mmcblk0p1  /boot           vfat    ro,defaults           0 0
+/dev/mmcblk0p2  /               ext4    ro,defaults,noatime   0 0
 tmpfs           /var/log        tmpfs   nodev,nosuid          0 0
 tmpfs           /var/tmp        tmpfs   nodev,nosuid          0 0
 tmpfs           /tmp            tmpfs   nodev,nosuid          0 0
 ```
+<br />
+* **disable filesystem check** 
+   * tune2fs -c -0 -i 0 /dev/mmcblk0p2 
 <br />
 * **edit /etc/systemd/system/dhcpcd5**<br />
    * change "/run/dhcpcd.pid" to "/var/run/dhcpcd.pid"<br />
