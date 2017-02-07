@@ -56,6 +56,11 @@ Make Changes in Read-Only State
 User Data on USB-Stick
 ----------------------
 
+* ** append to /etc/hdparm.conf**<br />
+``` 
+write_cache = off
+``` 
+
 **TODO: ** use a filesystem better suited for unexpected power fail<br />
 * append to **/etc/fstab**<br />
 ```
