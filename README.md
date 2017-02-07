@@ -56,7 +56,7 @@ Make Changes in Read-Only State
 User Data on USB-Stick
 ----------------------
 
-* ** append to /etc/hdparm.conf**<br />
+* **append to /etc/hdparm.conf**<br />
 ``` 
 write_cache = off
 ``` 
