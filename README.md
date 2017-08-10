@@ -3,7 +3,8 @@ Protect your Raspberry PI µSD card (use read-only filesystem)
 
 **WARNING!! EXPERIMENTAL SETTINGS: create a backup copy of your µSD card before applying these settings!** <br />
 
-**remove unnecessary packages** <br />
+**remove unnecessary packages** 
+<br />
 ```
 apt-get update && apt-get dist-upgrade
 apt-get remove --purge cron logrotate dphys-swapfile
