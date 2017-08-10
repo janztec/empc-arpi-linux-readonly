@@ -12,9 +12,7 @@ apt-get remove --purge cron logrotate dphys-swapfile
 apt-get autoremove --purge
 ```
 
-
 **link files to temporary filesystem** 
-
 
 ```
 rm -rf /var/lib/dhcp/ /var/spool /var/lock
@@ -44,12 +42,12 @@ tmpfs           /tmp            tmpfs   nodev,nosuid          0 0
 ```
 
 **disable filesystem check** 
+
     - tune2fs -c -0 -i 0 /dev/mmcblk0p2 
 
 **edit /etc/systemd/system/dhcpcd5**
 
     - change "/run/dhcpcd.pid" to "/var/run/dhcpcd.pid"
-    <br />
 
 **append "fastboot noswap ro" to /boot/cmdline.txt**
 
