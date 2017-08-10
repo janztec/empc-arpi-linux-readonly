@@ -11,9 +11,11 @@ apt-get update && apt-get dist-upgrade
 apt-get remove --purge cron logrotate dphys-swapfile
 apt-get autoremove --purge
 ```
-<br />
+
+
 **link files to temporary filesystem** 
-<br />
+
+
 ```
 rm -rf /var/lib/dhcp/ /var/spool /var/lock
 ln -s /tmp /var/lib/dhcp
