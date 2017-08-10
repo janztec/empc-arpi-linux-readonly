@@ -11,7 +11,8 @@ apt-get remove --purge cron logrotate dphys-swapfile
 apt-get autoremove --purge
 ```
 <br />
-**link files to temporary filesystem** <br />
+**link files to temporary filesystem** 
+<br />
 ```
 rm -rf /var/lib/dhcp/ /var/spool /var/lock
 ln -s /tmp /var/lib/dhcp
@@ -24,7 +25,8 @@ rm -f /var/lib/systemd/random-seed
 ln -s /tmp/random-seed /var/lib/systemd/random-seed
 ```
 <br />
-**edit /etc/fstab** <br />
+**edit /etc/fstab** 
+<br />
     - add **ro** to entries "/boot" and "/" 
     - replace the last digit in line "/boot" and "/" with **0**
     - append **tmpfs** entries for "/var/log", "/var/tmp" and "/tmp"
@@ -41,10 +43,13 @@ tmpfs           /tmp            tmpfs   nodev,nosuid          0 0
 **disable filesystem check** 
     - tune2fs -c -0 -i 0 /dev/mmcblk0p2 
 <br />
-**edit /etc/systemd/system/dhcpcd5**<br />
-    - change "/run/dhcpcd.pid" to "/var/run/dhcpcd.pid"<br />
+**edit /etc/systemd/system/dhcpcd5**
 <br />
-**append "fastboot noswap ro" to /boot/cmdline.txt**<br />
+    - change "/run/dhcpcd.pid" to "/var/run/dhcpcd.pid"
+    <br />
+<br />
+**append "fastboot noswap ro" to /boot/cmdline.txt**
+<br />
     - fastboot = no file system check on boot<br />
     - noswap = disable swap<br />
 ```   
@@ -61,13 +66,15 @@ Make Changes in Read-Only State
 User Data on USB-Stick
 ----------------------
 
-**append to /etc/hdparm.conf**<br />
+**append to /etc/hdparm.conf**
+<br />
 ``` 
 write_cache = off
 ``` 
 
 **TODO: ** use a filesystem better suited for unexpected power fail<br />
-- append to **/etc/fstab**<br />
+- append to **/etc/fstab**
+<br />
 ```
 /dev/sda1       /mnt            vfat    rw,defaults,nofail      0 2
 ```
