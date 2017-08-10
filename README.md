@@ -1,7 +1,8 @@
 Protect your Raspberry PI µSD card (use read-only filesystem)
 =============================================================
 
-**WARNING!! EXPERIMENTAL SETTINGS: create a backup copy of your µSD card before applying these settings!** <br />
+**WARNING!! EXPERIMENTAL SETTINGS: create a backup copy of your µSD card before applying these settings!**
+<br />
 
 **remove unnecessary packages** 
 <br />
