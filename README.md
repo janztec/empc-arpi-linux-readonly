@@ -10,6 +10,7 @@ Prerequisites:
 * Raspbian Stretch with Desktop (2017-09-07)
 * Raspbian Stretch Lite (2017-09-07)
 
+scripts based on: https://gist.github.com/mutability/6cc944bde1cf4f61908e316befd42bc4
 
 Make Filesystem Read-Only
 =========================
