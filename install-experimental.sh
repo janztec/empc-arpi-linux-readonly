@@ -34,6 +34,9 @@ sed -i '1 s/^/overlay=yes /' /boot/cmdline.txt
 wget -nv https://raw.githubusercontent.com/janztec/empc-arpi-linux-readonly/master/hooks_overlay -O /etc/initramfs-tools/hooks/overlay
 wget -nv https://raw.githubusercontent.com/janztec/empc-arpi-linux-readonly/master/init-bottom_overlay -O /etc/initramfs-tools/scripts/init-bottom/overlay
 
+chmod +x /etc/initramfs-tools/hooks/overlay
+chmod +x /etc/initramfs-tools/scripts/init-bottom/overlay
+
 mkinitramfs -o /boot/initramfs.gz
 echo "initramfs initramfs.gz followkernel" >>/boot/config.txt
 
