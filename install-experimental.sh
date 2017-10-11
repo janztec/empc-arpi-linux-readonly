@@ -18,6 +18,10 @@ if [ $KERNELVER -le 409040 ]; then
  exit 0
 fi
 
+if (cat /etc/issue | grep -v Raspbian) then
+    echo -e "$ERR ERROR: This script is only compatible with Raspbian Linux. $NC" 1>&2
+    exit 1
+fi
 
 clear
 WELCOME="This script activates read-only filesystem overlay\n
