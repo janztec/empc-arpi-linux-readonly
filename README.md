@@ -14,6 +14,36 @@ scripts based on: https://gist.github.com/mutability/6cc944bde1cf4f61908e316befd
 
 Make Filesystem Read-Only
 =========================
+
+**Disable SWAP**
+```
+sudo dphys-swapfile swapoff
+sudo systemctl disable dphys-swapfile
+sudo apt-get purge dphys-swapfile
+```
+
+**Disable man indexing**
+```
+sudo chmod -x /etc/cron.daily/man-db
+sudo chmod -x /etc/cron.weekly/man-db
+```
+
+**Move /var/log to tmpfs**
+
+Append to file /etc/fstab
+
+_tmpfs		/var/log	tmpfs	size=70M	0	0_
+```
+sudo nano /etc/fstab
+```
+
+
+**Disable unwanted log files**
+```
+sudo nano /etc/rsyslog.conf
+```
+
+**Install script**
 ```
 cd /tmp
 wget https://raw.githubusercontent.com/janztec/empc-arpi-linux-readonly/master/install-experimental.sh -O install-experimental.sh
